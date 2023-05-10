@@ -13,6 +13,8 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idExp;
     private String tituloExp;
+
+    private  String lugarExp;
     private String fechaDesdeExp;
     private String fechaHastaExp;
     private String descripcionExp;
@@ -26,18 +28,19 @@ public class Experiencia {
 
     public Experiencia(Long idExp,
                        String tituloExp,
+                       String lugarExp,
                        String fechaDesdeExp,
                        String fechaHastaExp,
                        String descripcionExp,
                        String imagenExp) {
         this.idExp = idExp;
         this.tituloExp = tituloExp;
+        this.lugarExp = lugarExp;
         this.fechaDesdeExp = fechaDesdeExp;
         this.fechaHastaExp = fechaHastaExp;
         this.descripcionExp = descripcionExp;
         this.imagenExp = imagenExp;
     }
-
     // Getters y Setters
 
     public Long getIdExp() {
@@ -52,8 +55,16 @@ public class Experiencia {
         return tituloExp;
     }
 
-    public void setTituloExp(String tituloExp) {
+    public void setTituloExp(String lugarExp) {
         this.tituloExp = tituloExp;
+    }
+
+    public String getLugarExp() {
+        return lugarExp;
+    }
+
+    public void setLugarExp(String lugarExp) {
+        this.lugarExp = lugarExp;
     }
 
     public String getFechaDesdeExp() {

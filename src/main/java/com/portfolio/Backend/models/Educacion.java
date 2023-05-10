@@ -12,6 +12,8 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEdu;
     private String tituloEdu;
+
+    private String lugarEdu;
     private String fechaEdu;
     private String descripcionEdu;
     private String imagenEdu;
@@ -19,15 +21,21 @@ public class Educacion {
     public Educacion() {
     }
 
-    public Educacion(Long idEdu, String tituloEdu, String fechaEdu, String descripcionEdu,
+    public Educacion(Long idEdu,
+                     String tituloEdu,
+                     String lugarEdu,
+                     String fechaEdu,
+                     String descripcionEdu,
                      String imagenEdu) {
         this.idEdu = idEdu;
         this.tituloEdu = tituloEdu;
+        this.lugarEdu = lugarEdu;
         this.fechaEdu = fechaEdu;
         this.descripcionEdu = descripcionEdu;
         this.imagenEdu = imagenEdu;
     }
 
+    //Getters y Setters
     public Long getIdEdu() {
         return idEdu;
     }
@@ -42,6 +50,14 @@ public class Educacion {
 
     public void setTituloEdu(String tituloEdu) {
         this.tituloEdu = tituloEdu;
+    }
+
+    public String getLugarEdu() {
+        return lugarEdu;
+    }
+
+    public void setLugarEdu(String lugarEdu) {
+        this.lugarEdu = lugarEdu;
     }
 
     public String getFechaEdu() {

@@ -23,6 +23,7 @@ public class Usuario
   private String apellido;
   private String titulo;
 
+
   private String acercaDe;
   private String fotoPerfil;
   private String imagenBanner;
