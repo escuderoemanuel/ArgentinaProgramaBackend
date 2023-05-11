@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.portfolio.Backend.models.Usuario;
+import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
@@ -18,12 +19,20 @@ public class UsuarioController {
   }
 
   // Crear usuario
-  @PostMapping("/usuario")
+  @PostMapping("/add")
   @ResponseBody
-  public Usuario crearUsuario(@RequestBody Usuario usuario) {
-    return usuarioService.addUsuario(usuario);
-
+  public String crearUsuario(@RequestBody Usuario usuario) {
+    usuarioService.addUsuario(usuario);
+    return "Usuario creado";
   }
+  
+  
+  // Traer Usuario
+  @GetMapping("/read")
+  public List<Usuario> getUsuario() {
+    return usuarioService.buscarUsuario();
+  }
+    
 
   // Prueba
   @GetMapping("/prueba")
