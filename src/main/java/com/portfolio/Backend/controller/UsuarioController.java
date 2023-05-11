@@ -17,6 +17,11 @@ public class UsuarioController {
   public UsuarioController(UsuarioService usuarioService) {
     this.usuarioService = usuarioService;
   }
+  
+  @GetMapping("/saludar")
+  public String saludar() {
+    return "Funcionando!!!";
+  }
 
   @GetMapping("/id/{id}")
   public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id) {
