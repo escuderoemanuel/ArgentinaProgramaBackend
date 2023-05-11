@@ -9,7 +9,7 @@ import com.portfolio.Backend.models.Usuario;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "http:localhost:4200")
+@CrossOrigin(origins = "bteh26eoqzwbqmerrfmn-mysql.services.clever-cloud.com")
 public class UsuarioController {
 
   private final UsuarioService usuarioService;
