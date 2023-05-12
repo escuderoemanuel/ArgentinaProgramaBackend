@@ -18,41 +18,23 @@ public class UsuarioController {
     this.usuarioService = usuarioService;
   }
 
-  // Crear usuario
+  // Crear Usuario
   @PostMapping("/add")
-  @ResponseBody
-  public String crearUsuario(@RequestBody Usuario usuario) {
-    usuarioService.addUsuario(usuario);
-    return "Usuario creado";
-  }
-
-  // Crear usuario 2
-  @PostMapping("/addd")
   @ResponseBody
   public ResponseEntity<Usuario> addUsuario(@RequestBody Usuario usuario) {
     Usuario nuevoUsuario = usuarioService.addUsuario(usuario);
     return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
   }
 
-  // Crear usuario 3
-  @PostMapping("/adddd")
-  @ResponseBody
-  public Usuario crearNuevoUsuario(@RequestBody Usuario usuario) {
-    return usuarioService.addUsuario(usuario);
-  }
 
-  // Traer Usuario
+  // Traer Lista de Usuarios
   @GetMapping("/all")
   public List<Usuario> getUsuario() {
     return usuarioService.buscarUsuario();
   }
 
-  // Prueba
-  @GetMapping("/prueba")
-  public String saludar() {
-    return "Funcionando!!!";
-  }
 
+  // Traer Usuario por ID
   @GetMapping("/id/{id}")
   public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id) {
     Usuario usuario = usuarioService.buscarUsuarioPorId(id);
@@ -60,10 +42,18 @@ public class UsuarioController {
             HttpStatus.OK);
   }
 
+  // Editar Usuario
   @PutMapping("/update")
   public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario) {
     Usuario updateUsuario = usuarioService.editarUsuario(usuario);
     return new ResponseEntity<>(updateUsuario,
             HttpStatus.OK);
+  }
+  
+  // Borrar Usuario
+  @DeleteMapping("/delete/{id}")
+  public ResponseEntity<?> borrarUsuario(@PathVariable("id") Long id) {
+    usuarioService.borrarUsuario(id);
+    return new ResponseEntity<>(HttpStatus.OK);
   }
 }
