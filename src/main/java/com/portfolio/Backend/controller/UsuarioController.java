@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
+//@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
 public class UsuarioController {
 
   private final UsuarioService usuarioService;
@@ -20,10 +20,20 @@ public class UsuarioController {
 
   // Crear usuario
    @PostMapping("/add")
-  public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
-    Usuario nuevoUsuario = usuarioService.addUsuario(usuario);
+  public String crearUsuario(@RequestBody Usuario usuario) {
+    usuarioService.addUsuario(usuario);
+    return "Usuario creado";
+  }
+  
+  // Crear usuario 2
+  @PostMapping("/addd")
+  public ResponseEntity<Usuario> addUsuario(@RequestBody Usuario usuario) {
+    Usuario nuevoUsuario= usuarioService.addUsuario(usuario);
     return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
   }
+  
+  // Crear usuario 3
+  
   
   
   // Traer Usuario
