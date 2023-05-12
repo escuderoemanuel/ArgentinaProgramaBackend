@@ -3,8 +3,8 @@ package com.portfolio.Backend.models;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
@@ -16,7 +16,7 @@ public class Usuario
     implements Serializable {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  //@GeneratedValue(strategy = GenerationType.AUTO)
   @Column(nullable = false, updatable = false)
   private Long id;
   private String nombre;
