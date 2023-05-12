@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/experiencia")
-@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
+@CrossOrigin(origins = "https://portfoliofrontargprog.web.app")
 public class ExperienciaController {
 
   private final ExperienciaService experienciaService;
