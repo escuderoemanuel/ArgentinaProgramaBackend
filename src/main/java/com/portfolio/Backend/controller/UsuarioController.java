@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
-//@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
+@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
 public class UsuarioController {
 
   private final UsuarioService usuarioService;

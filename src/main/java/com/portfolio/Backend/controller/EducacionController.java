@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/educacion")
+@CrossOrigin(origins = "https://argentinaprogramabackend-odvo.onrender.com")
 public class EducacionController {
 
   private final EducacionService educacionService;
