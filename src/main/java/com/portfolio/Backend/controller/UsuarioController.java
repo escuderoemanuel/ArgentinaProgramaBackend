@@ -19,16 +19,15 @@ public class UsuarioController {
   }
 
   // Crear usuario
-  @PostMapping("/add")
-  @ResponseBody
-  public String crearUsuario(@RequestBody Usuario usuario) {
-    usuarioService.addUsuario(usuario);
-    return "Usuario creado";
+   @PostMapping("/add")
+  public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
+    Usuario nuevoUsuario = usuarioService.addUsuario(usuario);
+    return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
   }
   
   
   // Traer Usuario
-  @GetMapping("/read")
+  @GetMapping("/all")
   public List<Usuario> getUsuario() {
     return usuarioService.buscarUsuario();
   }
