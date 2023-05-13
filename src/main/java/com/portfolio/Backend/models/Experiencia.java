@@ -55,7 +55,7 @@ public class Experiencia {
         return tituloExp;
     }
 
-    public void setTituloExp(String lugarExp) {
+    public void setTituloExp(String tituloExp) {
         this.tituloExp = tituloExp;
     }
 
